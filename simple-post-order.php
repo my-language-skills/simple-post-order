@@ -17,10 +17,13 @@ defined ("ABSPATH") or die ("No script assholes!");
 
 
 //Post organiced alphabetically
-function change_posts_order( $query ) {
-if ( $query-is_home() && $query-is_main_query() ) {
-$query-set( 'orderby', 'title' );
-$query-set( 'order', 'ASC' );
-}
-}
+function change_posts_order( $query ) 
+{
+  if ( $query-is_home() && $query-is_main_query() )
+    {
+      $query-set( 'orderby', 'title' );
+      $query-set( 'order', 'ASC' );
+    }
+  }
+
 add_action( 'pre_get_posts', ' change_posts_order ' );
